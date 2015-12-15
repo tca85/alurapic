@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" ng-app="alurapic"> <!-- diretiva do Angular para carregar o módulo principal -->
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+		<script src="js/lib/angular.min.js"></script>
+		<script src="js/main.js"></script>
+		<script src="js/controllers/fotos-controller.js"></script>
     </head>
-    <body>
+    <body ng-controller="FotosController"> <!-- diretiva do Angular para utilizar a controller -->
         <div class="container">
             <h1 class="text-center">Alurapic</h1>
+			 <!-- Angular Expression para fazer data binding -->
+			<img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
         </div> <!-- fim container -->        
     </body>
 </html>
