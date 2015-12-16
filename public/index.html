@@ -1,3 +1,8 @@
+<!-- 
+Thiago Alves
+obs: precisa entrar na pasta do projeto e iniciar o NodeJS
+npm start
+-->
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="alurapic"> <!-- diretiva do Angular para carregar o módulo principal -->
     <head>
@@ -6,15 +11,32 @@
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
-		<script src="js/lib/angular.min.js"></script>
-		<script src="js/main.js"></script>
-		<script src="js/controllers/fotos-controller.js"></script>
+        <script src="js/lib/angular.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/controllers/fotos-controller.js"></script>
     </head>
-    <body ng-controller="FotosController"> <!-- diretiva do Angular para utilizar a controller -->
+
+    <!-- diretiva do Angular para utilizar a controller dentro do Body -->
+    <body ng-controller="FotosController">
         <div class="container">
-            <h1 class="text-center">Alurapic</h1>
-			 <!-- Angular Expression para fazer data binding -->
-			<img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-        </div> <!-- fim container -->        
+            <div class="jumbotron">
+                <h1 class="text-center">Alurapic</h1>
+            </div>
+
+            <div class="row"> <!-- row + col-md-2 = grid -->
+                <!-- Utiliza a diretiva do Angular para percorrer a lista de fotos que foi requisitada via http -->
+                <div class="panel panel-default col-md-2" ng-repeat="foto in fotos">
+                    <div class="panel-heading">
+                        <h3 class="panel-title text-center">{{foto.titulo}}</h3>
+                    </div>
+
+                    <div class="panel-body">
+                        <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">    
+                    </div> <!-- fim do panel-body -->
+                </div> <!-- fim do panel -->
+            </div> <!-- fim do row/grid -->
+
+        </div> <!-- fim container -->
+
     </body>
 </html>

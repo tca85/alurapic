@@ -1,9 +1,9 @@
 // public/js/main.js
-// módulo principal da aplicação.
-// a função module recebe dois parâmetros:
-// O primeiro é o nome do módulo que desejamos criar e 
-// o segundo é uma array com todos os módulos de que nosso módulo depende. 
-// Como não avançamos ainda com o projeto, não temos nenhuma dependência ainda, 
-// porém, você não deve omitir este parâmetro.
+// mÃ³dulo principal da aplicaÃ§Ã£o.
+// a funÃ§Ã£o module recebe dois parÃ¢metros:
+// O primeiro Ã© o nome do mÃ³dulo que desejamos criar e 
+// o segundo Ã©ma array com todos os mÃ³dulos de que nosso mÃ³dulo depende. 
+// Como nÃ£o avanÃ§amos ainda com o projeto, nÃ£o temos nenhuma dependÃªncia ainda, 
+// porÃ©m, vocÃª nÃ£o deve omitir este parÃ¢tro.
 
 angular.module('alurapic', []);

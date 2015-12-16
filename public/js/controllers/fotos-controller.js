@@ -1,12 +1,26 @@
 // public/js/controllers/fotos-controller.js
 
-// $scope - inje��o de depend�ncia
-// com isso � poss�vel enviar para fora da function os valores
-// O Angular sabe o que deve buscar de sua infraestrutura de acordo com o nome do par�metro que recebemos em nosso controller
+// $scope - injeção de dependência
+// com isso é possível enviar para fora da function os valores
+// O Angular sabe o que deve buscar de sua infraestrutura 
+// de acordo com o nome do parâmetro que recebemos em nosso controller
+// $http - executa funções http
 
-angular.module('alurapic').controller('FotosController', function($scope){
-   $scope.foto = {
-        titulo : 'Le�o',
-        url : 'http://www.fundosanimais.com/Minis/leoes.jpg'
-    };
+angular.module('alurapic').controller('FotosController', function($scope, $http){
+    $scope.fotos = [];
+
+    // Toda requisição assíncrona é incerta, não sabemos quanto tempo 
+    // ela demorará para ser executada e se realmente será bem sucedida.
+    // $http.get nos retorna é uma promessa de que ele buscará os dados.
+
+    var promise = $http.get('/v1/fotos');
+
+    // quando a "promessa" for cumprida, podemos ter acesso aos dados
+    // retornados do servidor:
+    promise.then(function(retorno){
+        $scope.fotos = retorno.data;        
+    }).catch(function(erro){
+        console.log(erro);
+    })
+    
 });
