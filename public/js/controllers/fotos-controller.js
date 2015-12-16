@@ -11,7 +11,8 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
 
     // Toda requisição assíncrona é incerta, não sabemos quanto tempo 
     // ela demorará para ser executada e se realmente será bem sucedida.
-    // $http.get nos retorna é uma promessa de que ele buscará os dados.
+    // $http.get nos retorna uma promessa de que ele buscará os dados
+    // na requisição: http://localhost:3000/v1/fotos
 
     var promise = $http.get('/v1/fotos');
 
