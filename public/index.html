@@ -14,6 +14,7 @@ npm start
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
+        <script src="js/directives/minhas-diretivas.js"></script>
     </head>
 
     <!-- diretiva do Angular para utilizar a controller dentro do Body -->
@@ -24,16 +25,12 @@ npm start
             </div>
 
             <div class="row"> <!-- row + col-md-2 = grid -->
-                <!-- Utiliza a diretiva do Angular para percorrer a lista de fotos que foi requisitada via http -->
-                <div class="panel panel-default col-md-2" ng-repeat="foto in fotos">
-                    <div class="panel-heading">
-                        <h3 class="panel-title text-center">{{foto.titulo}}</h3>
-                    </div>
 
-                    <div class="panel-body">
-                        <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">    
-                    </div> <!-- fim do panel-body -->
-                </div> <!-- fim do panel -->
+                <!-- Utilizando diretivas para simplificar e reutilizar o código -->
+                <meu-painel ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
+                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
+                </meu-painel>
+
             </div> <!-- fim do row/grid -->
 
         </div> <!-- fim container -->
