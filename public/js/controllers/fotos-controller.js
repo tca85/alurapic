@@ -18,7 +18,7 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
     // retornados do servidor:
     /*    
     var promise = $http.get('/v1/fotos');
-    
+
     promise.then(function(retorno){
         $scope.fotos = retorno.data;        
     }).catch(function(erro){
