@@ -11,6 +11,7 @@ npm start
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/efeitos.css">
         <script src="js/lib/angular.min.js"></script>
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
@@ -35,7 +36,7 @@ npm start
             </div> <!-- fim row do campo de busca" -->
 
             <div class="row"> <!-- row + col-md-2 = grid -->
-                <meu-painel class="col-md-2" ng-repeat="foto in fotos | filter: filtro" 
+                <meu-painel class="col-md-2 fade" ng-repeat="foto in fotos | filter: filtro" 
                             titulo="{{foto.titulo}}">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </meu-painel>
