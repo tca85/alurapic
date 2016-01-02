@@ -20,6 +20,7 @@ npm start
     <!-- diretiva do Angular para utilizar a controller dentro do Body -->
     <body ng-controller="FotosController">
         <div class="container">
+
             <div class="jumbotron">
                 <h1 class="text-center">Alurapic</h1>
             </div>
@@ -28,14 +29,14 @@ npm start
             <div class="row">
                 <div class="col-md-12">
                     <form>
-                        <input ng-model="filtro" class="form-control" placeholder="título da foto">
+                        <input ng-model="filtro" class="form-control" placeholder="filtrar">
                     </form>
                 </div> <!-- col-md12 -->
             </div> <!-- fim row do campo de busca" -->
 
             <div class="row"> <!-- row + col-md-2 = grid -->
-                <!-- Utilizando diretivas para simplificar e reutilizar o código -->
-                <meu-painel class="col-md-2" ng-repeat="foto in fotos" titulo="{{foto.titulo}}">
+                <meu-painel class="col-md-2" ng-repeat="foto in fotos | filter: filtro" 
+                            titulo="{{foto.titulo}}">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </meu-painel>
             </div> <!-- fim do row/grid -->
