@@ -25,10 +25,12 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
         console.log(erro);
     })
     */
-    
-    // capturando o texto digitado
-    // AngularJS só lê. Para fazer um two-way databind,
-    // precisa usar a diretiva ng-model no html
+
+    // Adiciona a propriedade que captura o texto digitado
+    // AngularJS só lê, não consegue alterar as informações
+    // do DDO. Para fazer isso, utilizamos um two-way databind,
+    // que torna possível ler o texto no $scope.
+    // Precisa também usar a diretiva ng-model no html
     $scope.filtro = '';
 
     $http.get('v1/fotos')

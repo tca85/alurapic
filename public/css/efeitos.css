@@ -9,7 +9,8 @@ utilizado quando estiver saindo da lista
     transform: scale(0.1);
 }
 
-/* sai do tamanho que está, e vai diminuindo */
+/* sai do tamanho que está, e vai diminuindo quando o 
+elemento sofrer uma transformação (no caso, saindo da lista)*/
 .painel-animado{
     -moz-transition:transform 0.8s;
     -webkit-transition:transform 0.8s;

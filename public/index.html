@@ -16,6 +16,9 @@ npm start
         <script src="js/main.js"></script>
         <script src="js/controllers/fotos-controller.js"></script>
         <script src="js/directives/minhas-diretivas.js"></script>
+
+        <!-- módulo ngAnimate -->
+        <script src="js/lib/angular-animate.min.js"></script>
     </head>
 
     <!-- diretiva do Angular para utilizar a controller dentro do Body -->
@@ -30,13 +33,16 @@ npm start
             <div class="row">
                 <div class="col-md-12">
                     <form>
-                        <input ng-model="filtro" class="form-control" placeholder="filtrar">
+                        <input class="form-control" placeholder="filtrar"
+                               ng-model="filtro"
+                               ng-model-options="{debounce: 500}">
                     </form>
                 </div> <!-- col-md12 -->
             </div> <!-- fim row do campo de busca" -->
 
             <div class="row"> <!-- row + col-md-2 = grid -->
-                <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" 
+                <meu-painel class="col-md-2 painel-animado" 
+                            ng-repeat="foto in fotos | filter: filtro" 
                             titulo="{{foto.titulo}}">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </meu-painel>

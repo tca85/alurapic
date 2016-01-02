@@ -6,4 +6,4 @@
 // Como não avançamos ainda com o projeto, não temos nenhuma dependência ainda, 
 // porém, você não deve omitir este parâtro.
 
-angular.module('alurapic', ['minhasDiretivas']);
+angular.module('alurapic', ['minhasDiretivas', 'ngAnimate']);
