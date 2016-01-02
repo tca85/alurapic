@@ -25,6 +25,11 @@ angular.module('alurapic').controller('FotosController', function($scope, $http)
         console.log(erro);
     })
     */
+    
+    // capturando o texto digitado
+    // AngularJS só lê. Para fazer um two-way databind,
+    // precisa usar a diretiva ng-model no html
+    $scope.filtro = '';
 
     $http.get('v1/fotos')
         .success(function(fotos) {
