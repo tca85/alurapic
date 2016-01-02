@@ -36,7 +36,7 @@ npm start
             </div> <!-- fim row do campo de busca" -->
 
             <div class="row"> <!-- row + col-md-2 = grid -->
-                <meu-painel class="col-md-2 fade" ng-repeat="foto in fotos | filter: filtro" 
+                <meu-painel class="col-md-2 painel-animado" ng-repeat="foto in fotos | filter: filtro" 
                             titulo="{{foto.titulo}}">
                     <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
                 </meu-painel>
