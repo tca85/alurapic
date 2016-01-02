@@ -1,5 +1,8 @@
-/* ng-leave-active - diretiva do AngularJS para que um CSS seja
-utilizado quando estiver saindo da lista
+/*
+Quando usamos o módulo ngAnimate, algumas diretivas do Angular 
+passam a adicionar ou remover classes automaticamente sem a nossa ciência
+Por exemplo, quando usamos a diretiva ng-repeat e um elemento sai da lista
+ele ganha a classe ng-leave, e quando está para sair ng-leave-active. 
 */
 .painel-animado.ng-leave-active{
     -moz-transform: scale(0.1);
