@@ -1,30 +1,28 @@
 <!--  
 Fragmento de página: principal.html
 http://localhost:3000/#/fotos
+
+ng-model         - permite ler e também alterar o model associado (two-way data binding)
+ng-model-options - permite aguardar 500ms a cada dígito
 -->
 
 <div class="jumbotron">
     <h1 class="text-center">Alurapic</h1>
 </div>
 
-<!-- row que ocupa a linha toda com um campo de busca -->
-<!-- ng-model: permite ler e também alterar o model associado (two-way data binding) -->
-<!-- ng-model-options: permite aguardar 500ms a cada dígito -->
 <div class="row">
     <div class="col-md-12">
         <form>
 
             <div clas="input-group">
-
                 <span class="input-group-btn">
                     <!-- insere um botão que chamará a página de cadastro -->
-                    <a href="fotos/new" class="btn btn-primary">Nova Foto</a>
+                    <a href="/fotos/new" class="btn btn-primary" type="button">Nova Foto</a>
                 </span>
 
                 <input class="form-control" placeholder="filtrar"
                        ng-model="filtro"
-                       ng-model-options="{debounce: 500}">
-
+                       ng-model-options="{ debounce: 500 }">
             </div> <!-- div input-group -->
 
         </form>

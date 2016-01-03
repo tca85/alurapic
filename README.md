@@ -7,4 +7,4 @@ https://www.alura.com.br/course/angularjs-mvc
 Single Page Application utilizando AngularJS 1.x e Node.js
 
 ------------
-48% de conclusão
+Status: 58% de conclusão
