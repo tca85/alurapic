@@ -5,6 +5,8 @@
 // o segundo é um array com todos os módulos de que nosso módulo depende. 
 // Mesmo que não haja dependências, esse parâmetro não pode ser omitido
 
+// ngRoute - módulo que faz a configuração de rotas
+
 angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 
 //  Para configurar o sistema de rotas, ngRoute é pré-requisito
@@ -15,6 +17,7 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 
     // habilita a utilização de HMTL5, para que não precise colocar # na URL
     // precisar colocar <base href="/"> na página inicial
+    // obs: poderia usar <base href="/nomeApp">
     $locationProvider.html5Mode(true);
 
     // http://localhost:3000/fotos
@@ -30,5 +33,4 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 
     // se o usuário informar uma rota que não existe, vai para um default
     $routeProvider.otherwise({ redirectTo: '/fotos'});
-
 });
