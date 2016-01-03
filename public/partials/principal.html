@@ -1,7 +1,6 @@
 <!--  
 Fragmento de página: principal.html
 http://localhost:3000/#/fotos
-
 -->
 
 <div class="jumbotron">
@@ -14,9 +13,20 @@ http://localhost:3000/#/fotos
 <div class="row">
     <div class="col-md-12">
         <form>
-            <input class="form-control" placeholder="filtrar"
-                   ng-model="filtro"
-                   ng-model-options="{debounce: 500}">
+
+            <div clas="input-group">
+
+                <span class="input-group-btn">
+                    <!-- insere um botão que chamará a página de cadastro -->
+                    <a href="fotos/new" class="btn btn-primary">Nova Foto</a>
+                </span>
+
+                <input class="form-control" placeholder="filtrar"
+                       ng-model="filtro"
+                       ng-model-options="{debounce: 500}">
+
+            </div> <!-- div input-group -->
+
         </form>
     </div> <!-- col-md12 -->
 </div> <!-- fim row do campo de busca" -->

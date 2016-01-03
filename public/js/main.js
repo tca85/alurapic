@@ -28,7 +28,8 @@ angular.module('alurapic', ['minhasDiretivas', 'ngAnimate', 'ngRoute'])
 
     // http://localhost:3000/fotos/new
     $routeProvider.when('/fotos/new', {
-        templateUrl: 'partials/foto.html' 
+        templateUrl: 'partials/foto.html',
+        controller: 'FotoController'
     });
 
     // se o usuário informar uma rota que não existe, vai para um default
