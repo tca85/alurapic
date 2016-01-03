@@ -23,7 +23,7 @@ ng-show - exibe a validação dos erros condicionalmente
 
         <div class="form-group">
             <label>Url</label>
-            <input ng-model="foto.url" name="url" class="form-control">
+            <input ng-model="foto.url" name="url" class="form-control" required>
             <span ng-show="formulario.url.$error.required" class="form-control alert-danger">
                 Url obrigatória
             </span>
@@ -31,7 +31,7 @@ ng-show - exibe a validação dos erros condicionalmente
 
         <div class="form-group">
             <label>Descrição</label>
-            <textarea ng-model="foto.descricao" name="descricao" class="form-control"></textarea>
+            <textarea ng-model="foto.descricao" name="descricao" class="form-control" required></textarea>
             <span ng-show="formulario.descricao.$error.required" class="form-control alert-danger">
                 Descrição obrigatória
             </span>
