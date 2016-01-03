@@ -2,11 +2,15 @@
 Thiago Alves
 obs: precisa entrar na pasta do projeto e iniciar o NodeJS
 npm start
+
+página principal
+- Single Page Application
 -->
 <!DOCTYPE html>
 <html lang="pt-br" ng-app="alurapic"> <!-- diretiva do Angular para carregar o módulo principal -->
     <head>
         <meta charset="UTF-8">
+        <base href="/">
         <meta name="viewport" content="width=device-width">
         <title>Alurapic</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -19,38 +23,14 @@ npm start
 
         <!-- módulo ngAnimate -->
         <script src="js/lib/angular-animate.min.js"></script>
+
+        <!-- módulo ngRoute permite utilizar a ngView -->
+        <script src="js/lib/angular-route.min.js"></script>
     </head>
 
-    <!-- diretiva do Angular para utilizar a controller dentro do Body -->
-    <body ng-controller="FotosController">
+    <body>
         <div class="container">
-
-            <div class="jumbotron">
-                <h1 class="text-center">Alurapic</h1>
-            </div>
-
-            <!-- row que ocupa a linha toda com um campo de busca -->
-            <!-- ng-model: permite ler e também alterar o model associado (two-way data binding) -->
-            <!-- ng-model-options: permite aguardar 500ms a cada dígito -->
-            <div class="row">
-                <div class="col-md-12">
-                    <form>
-                        <input class="form-control" placeholder="filtrar"
-                               ng-model="filtro"
-                               ng-model-options="{debounce: 500}">
-                    </form>
-                </div> <!-- col-md12 -->
-            </div> <!-- fim row do campo de busca" -->
-
-            <div class="row"> <!-- row + col-md-2 = grid -->
-                <meu-painel class="col-md-2 painel-animado" 
-                            ng-repeat="foto in fotos | filter: filtro" 
-                            titulo="{{foto.titulo}}">
-                    <img class="img-responsive center-block" src="{{foto.url}}" alt="{{foto.titulo}}">
-                </meu-painel>
-            </div> <!-- fim do row/grid -->
-
-        </div> <!-- fim container -->
-
+            <ng-view></ng-view>
+        </div>
     </body>
 </html>
